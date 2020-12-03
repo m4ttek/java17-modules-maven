@@ -1,9 +1,15 @@
 package com.chrosciu.crypto;
 
-import com.sun.crypto.provider.SunJCE;
+import java.security.Provider;
+import java.security.Security;
 
 public class CryptoService {
     public String getCryptoProviderName() {
-        return new SunJCE().getName();
+        Provider[] providers = Security.getProviders();
+        if (providers.length > 0) {
+            return providers[0].getName();
+        } else {
+            throw new IllegalStateException("No security providers defined!");
+        }
     }
 }
