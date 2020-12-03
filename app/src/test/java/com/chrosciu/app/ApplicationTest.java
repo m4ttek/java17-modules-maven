@@ -5,7 +5,6 @@ import com.chrosciu.greeting.impl.GreetingServiceImpl;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-@Disabled
 public class ApplicationTest {
     @Test
     public void test() {
