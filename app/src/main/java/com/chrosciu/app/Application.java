@@ -5,7 +5,7 @@ import com.chrosciu.encoder.EncoderService;
 import com.chrosciu.greeting.GreetingService;
 import com.chrosciu.greeting.impl.GreetingServiceImpl;
 import com.chrosciu.model.Book;
-//import com.chrosciu.model.User;
+import com.chrosciu.model.User;
 import com.chrosciu.stacktrace.StacktraceService;
 import com.chrosciu.xml.XmlService;
 
@@ -24,10 +24,10 @@ public class Application {
         Book book = new Book();
         book.setAuthor("Mickiewicz");
         book.setTitle("Dziady");
-//        User user = new User();
-//        user.setName("Marcin");
+        User user = new User();
+        user.setName("Marcin");
         XmlService xmlService = new XmlService();
         System.out.println(xmlService.getXmlForObject(Book.class, book));
-//        System.out.println(xmlService.getXmlForObject(User.class, user));
+        System.out.println(xmlService.getXmlForObject(User.class, user));
     }
 }
