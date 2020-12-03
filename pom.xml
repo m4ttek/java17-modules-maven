@@ -35,7 +35,11 @@
                     <target>9</target>
                     <compilerArgs>
                         <arg>--add-modules=java.xml.bind</arg>
-                        <arg>--add-exports=java.base/com.sun.crypto.provider=ALL-UNNAMED</arg>
+                        <arg>--add-exports=java.base/com.sun.crypto.provider=com.chrosciu.crypto</arg>
+                        <arg>--add-reads=com.chrosciu.model=java.xml.bind</arg>
+                        <arg>--add-reads=com.chrosciu.stacktrace=jdk.unsupported</arg>
+                        <arg>--add-reads=com.chrosciu.user=java.xml.bind</arg>
+                        <arg>--add-reads=com.chrosciu.xml=java.xml.bind</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
