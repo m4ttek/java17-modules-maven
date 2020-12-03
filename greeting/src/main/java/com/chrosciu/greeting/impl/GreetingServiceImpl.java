@@ -3,7 +3,6 @@ package com.chrosciu.greeting.impl;
 
 import com.chrosciu.greeting.GreetingService;
 import org.apache.commons.lang3.ObjectUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.CaseUtils;
 
 public class GreetingServiceImpl implements GreetingService {
