@@ -21,11 +21,8 @@ public class Application {
         System.out.println(encoderService.encodeBase64("Marcin"));
         StacktraceService stacktraceService = new StacktraceService();
         stacktraceService.getCallStackClassNames().forEach(System.out::println);
-        Book book = new Book();
-        book.setAuthor("Mickiewicz");
-        book.setTitle("Dziady");
-        User user = new User();
-        user.setName("Marcin");
+        Book book = Book.builder().author("Mickiewicz").title("Dziady").build();
+        User user = User.builder().name("Marcin").build();
         XmlService xmlService = new XmlService();
         System.out.println(xmlService.getXmlForObject(Book.class, book));
         System.out.println(xmlService.getXmlForObject(User.class, user));
