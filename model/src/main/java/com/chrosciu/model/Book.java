@@ -1,5 +1,6 @@
 package com.chrosciu.model;
 
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
