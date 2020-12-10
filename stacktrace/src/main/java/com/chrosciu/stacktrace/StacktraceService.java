@@ -1,20 +1,15 @@
 package com.chrosciu.stacktrace;
 
-import sun.reflect.Reflection;
-
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StacktraceService {
     public List<String> getCallStackClassNames() {
-        List<String> clazzez = new ArrayList<>();
-        int i = 0;
-        Class<?> caller = Reflection.getCallerClass(i++);
-        do {
-            String clazz = caller.getName();
-            clazzez.add(clazz);
-            caller = Reflection.getCallerClass(i++);
-        } while (caller != null);
-        return clazzez;
+        StackWalker stackWalker = StackWalker.getInstance(StackWalker.Option.RETAIN_CLASS_REFERENCE);
+        return stackWalker.walk(
+                stackFrameStream -> stackFrameStream
+                        .map(stackFrame -> stackFrame.getClassName())
+                        .collect(Collectors.toList())
+        );
     }
 }
